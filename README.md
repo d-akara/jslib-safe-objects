@@ -1,4 +1,5 @@
-const safe = require('./index.js')
+```javascript
+const safe = require('safe-objects')
 
 let o = {
     name: "User1",
@@ -23,7 +24,7 @@ let s = safe(o)
 console.log(s.getAddress().street._ === '513')
 console.log(s.name._ === 'User1')
 
-// Example using a default value
+// Example using a default value '.__()' is used to specify a default resolution
 console.log(s.name.noName.noName2.__('name') === 'name')
 
 // Example resolving to an object
@@ -42,3 +43,4 @@ console.log(s.style().testing.__('nothing') === 'nothing')
 // Array examples
 console.log(s.items[0]._ === 'A')
 console.log(s.items[2].testing._ === undefined)
+```
